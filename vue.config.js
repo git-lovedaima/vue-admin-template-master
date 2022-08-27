@@ -35,6 +35,13 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    proxy: {
+      // 跨域处理，通过另一个服务器代理发出请求
+      '/api': {
+        target: 'http://ihrm.itheima.net/', // 跨域请求的地址
+        changeOrigin: true // 只有这个值为true的时候，才表示开启跨域
+      }
     }
     // before: require('./mock/mock-server.js')
   },
